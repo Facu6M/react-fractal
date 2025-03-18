@@ -7,7 +7,7 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://backend-fractal-o8jg.onrender.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data))
       .catch((error) => console.error("Error fetching orders:", error));
@@ -15,7 +15,9 @@ const MyOrders = () => {
 
   const deleteOrder = (id) => {
     if (window.confirm("Are you sure you want to delete this order?")) {
-      fetch(`http://localhost:5000/orders/${id}`, { method: "DELETE" })
+      fetch(`https://backend-fractal-o8jg.onrender.com/orders/${id}`, {
+        method: "DELETE",
+      })
         .then((res) => res.json())
         .then(() => {
           setOrders((prevOrders) =>

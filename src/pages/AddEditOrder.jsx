@@ -20,7 +20,7 @@ const AddEditOrder = () => {
       const fetchOrder = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/orders/${id}`
+            `https://backend-fractal-o8jg.onrender.com/orders/${id}`
           );
           setOrder({
             orderNum: response.data.order,
